@@ -2,19 +2,19 @@ import checks
 
 triangle = list()
 i = 0
-check_result = False
+
 
 print("\nПрограма аналізу трикутника за сторонами...")
 while i <= 2:
     side = input(f"\033[0mВведіть {i + 1} сторону: ")
     # Перевірка на некоректні символи включаючи букви, порожні строки та від'ємні числа
-    if check_result == checks.check_for_correct_characters(side):
+    if not checks.check_for_correct_characters(side):
         continue
     # Перевірка на нуль
-    elif check_result == checks.check_for_zero(side):
+    elif not checks.check_for_zero(side):
         continue
     # Перевірка на кількість символів
-    elif check_result == checks.check_for_size(side):
+    elif not checks.check_for_size(side):
         continue
     elif i == 2 or len(triangle) == 3:
         # Якщо знадобиться переписати існуючу сторону після непроходження некст перевірки

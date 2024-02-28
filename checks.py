@@ -28,9 +28,8 @@ def check_for_size(side):
 
 def check_existence(triangle):
     sorted_triangle = sorted(triangle, reverse=True)
-    for side in sorted_triangle:
-        if sorted_triangle[0] > sorted_triangle[1] + sorted_triangle[2]:
-            return [triangle.index(side), triangle.index(side) + 1]
-        else:
-            return None
+    if sorted_triangle[0] > sorted_triangle[1] + sorted_triangle[2]:
+        return [triangle.index(sorted_triangle[0]), triangle.index(sorted_triangle[0]) + 1]
+    else:
+        return None
 
